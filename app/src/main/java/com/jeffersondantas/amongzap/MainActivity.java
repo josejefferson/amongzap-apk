@@ -1,13 +1,12 @@
 package com.jeffersondantas.amongzap;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Window;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.webkit.WebSettings;
-import android.view.Window;
-import android.graphics.Color;
-import com.jeffersondantas.amongzap.R;
 
 public class MainActivity extends Activity {
   private WebView webView;

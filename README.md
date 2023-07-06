@@ -11,6 +11,7 @@
 ./gradlew assembleRelease
 
 # Gera a chave de assinatura, se não tiver sido gerada ainda
+# Somente utilize letras e números na senha!
 keytool -genkey -v -keystore key.keystore -alias app-key -keyalg RSA -keysize 2048 -validity 10000
 
 # Assina o APK digitalmente
