@@ -27,6 +27,31 @@ openssl base64 -A -in key.keystore -out key.keystore.base64.txt
   * `KEYPASSWORD`: Senha que você criou ao gerar a chave de assinatura
   * `KEYSTOREPASSWORD`: Senha que você criou ao gerar a chave de assinatura
   * `SIGNINGKEYBASE64`: Base64 gerado da chave
+---
+* No arquivo `.github/workflows/build.yml`, altere as linhas destacadas com o nome do seu app
+```yaml
+      - name: Upload APK
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ${{steps.sign_apk.outputs.signedReleaseFile}}
+          asset_name: AmongZap ${{ steps.var.outputs.tag }}.apk
+          #           ^^^^^^^^
+          asset_content_type: application/zip
+
+      - name: Upload AAB
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ${{steps.sign_aab.outputs.signedReleaseFile}}
+          asset_name: AmongZap ${{ steps.var.outputs.tag }}.aab
+          #           ^^^^^^^^
+          asset_content_type: application/zip
+```
 
 ## Fazer a release no GitHub Actions
 ```bash
