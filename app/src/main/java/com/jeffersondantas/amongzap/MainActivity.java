@@ -20,7 +20,7 @@ public class MainActivity extends Activity {
     webView = (WebView) findViewById(R.id.webview);
     webView.setWebViewClient(new WebViewClient());
     webView.setBackgroundColor(Color.TRANSPARENT);
-    webView.loadUrl("https://amongzap.jeffersondantas.repl.co/chat");
+    webView.loadUrl("https://amongzap.adaptable.app/chat");
 
     WebSettings webSettings = webView.getSettings();
     webSettings.setJavaScriptEnabled(true);
